@@ -19,4 +19,4 @@ function [f,g] = linear_regression_vec(theta, X,y)
   %
 %%% YOUR CODE HERE %%%
    f = 0.5 .* (theta' * X - y) * (theta' * X - y)';
-   g = X * (theta' * X - y)';   %X: n * m, (theta' * X - y)': m * 1,  g: 1 * n
+   g = X * (theta' * X - y)';   %X: n * m, (theta' * X - y)': m * 1,  g: n * 1
