@@ -76,6 +76,10 @@ predicted_prices = theta'*test.X;
 test_rms=sqrt(mean((predicted_prices - actual_prices).^2));
 fprintf('RMS testing error: %f\n', test_rms);
 
+% Print out gradient check result
+fun = @linear_regression_vec;
+average_error = grad_check(fun, theta, 100, train.X, train.y);
+fprintf('gradient check average error: %f\n', average_error);
 
 % Plot predictions on test data.
 plot_prices=true;
@@ -89,3 +93,4 @@ if (plot_prices)
   xlabel('House #');
   ylabel('House price ($1000s)');
 end
+
