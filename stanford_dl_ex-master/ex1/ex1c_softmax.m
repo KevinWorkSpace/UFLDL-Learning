@@ -15,7 +15,7 @@ num_classes = 10;
 % Add row of 1s to the dataset to act as an intercept term.
 train.X = [ones(1,size(train.X,2)); train.X]; 
 test.X = [ones(1,size(test.X,2)); test.X];
-train.y = train.y+1; % make labels 1-based.
+train.y = train.y+1; % make labels 1-based.   ´Ó0-9±ä³É1-10
 test.y = test.y+1; % make labels 1-based.
 
 % Training set info
