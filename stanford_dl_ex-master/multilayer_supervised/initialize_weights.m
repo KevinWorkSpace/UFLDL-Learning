@@ -1,4 +1,4 @@
-function [ stack ] = initialize_weights( ei )
+function [stack] = initialize_weights( ei )
 %INITIALIZE_WEIGHTS Random weight structures for a network architecture
 %   eI describes a network via the fields layerSizes, inputDim, and outputDim 
 %   
@@ -13,7 +13,7 @@ for l = 1 : numel(ei.layer_sizes)
         prev_size = ei.layer_sizes(l-1);
     else
         prev_size = ei.input_dim;
-    end;
+    end
     cur_size = ei.layer_sizes(l);
     % Xaxier's scaling factor
     s = sqrt(6) / sqrt(prev_size + cur_size);
