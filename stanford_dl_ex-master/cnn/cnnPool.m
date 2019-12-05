@@ -30,6 +30,21 @@ pooledFeatures = zeros(convolvedDim / poolDim, ...
 %   Use mean pooling here.
 
 %%% YOUR CODE HERE %%%
+for imageNum = 1:numImages
+  for filterNum = 1:numFilters
+      poolImage = zeros(convolvedDim / poolDim, convolvedDim / poolDim);
+      im = squeeze(convolvedFeatures(:, :, numFilters, imageNum));
+      for i = 1:convolvedDim / poolDim
+          for j = 1:convolvedDim / poolDim
+              rows = (i-1)*poolDim+1:i*poolDim;
+              cols = (j-1)*poolDim+1:j*poolDim;
+              A = im(rows, cols);
+              poolImage(i, j) = mean(A(:));
+          end
+      end
+      pooledFeatures(:, :, filterNum, imageNum) = poolImage;
+  end
+end
 
 end
 

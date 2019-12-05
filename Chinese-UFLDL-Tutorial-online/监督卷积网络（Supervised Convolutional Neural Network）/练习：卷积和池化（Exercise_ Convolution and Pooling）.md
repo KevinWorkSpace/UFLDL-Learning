@@ -35,7 +35,7 @@ If you use conv2(image, W), MATLAB will first "flip" W, reversing its rows and c
 ⎛⎝⎜147258369⎞⎠⎟−→−flip⎛⎝⎜963852741⎞⎠⎟
 If the original layout of W was correct, after flipping, it would be incorrect. For the layout to be correct after flipping, you will have to flip W before passing it into conv2, so that after MATLAB flips W in conv2, the layout will be correct. For conv2, this means reversing the rows and columns, which can be done by rotating W 90 degrees twice with rot90 as shown below:
 
- 
+
 % Flip W for use in conv2
 W = rot90(W,2);
 
